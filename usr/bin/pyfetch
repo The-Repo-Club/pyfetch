@@ -30,8 +30,10 @@ output = [ 'Greeting', 'Dashes', 'User', 'Hostname', 'Distro', 'Kernel', 'Uptime
 #---------------Dictionaries---------------#
 
 colorDict = {
+    'AIX': ['\x1b[0;32m', '\x1b[1;32m'],
+    'Alpine': ['\x1b[0;34m', '\x1b[1;34m'],
     'Arch Linux': ['\x1b[0;34m', '\x1b[1;34m'],
-    'Manjaro Linux': ['\x1b[0;34m', '\x1b[1;34m'],
+    'Manjaro Linux': ['\x1b[0;32m', '\x1b[1;32m'],
     'Birthday': ['\x1b[0;34m', '\x1b[1;34m', '\x1b[0;31m', '\x1b[0;33m', '\x1b[0;32m', '\x1b[0;34m',],
     'Ubuntu': ['\x1b[0;31m', '\x1b[1;31m', '\x1b[0;33m'],
     'Debian': ['\x1b[0;31m', '\x1b[1;31m'],
@@ -80,6 +82,53 @@ wmDict = {
     }
 
 logosDict = {
+'AIX': '''{color[1]}
+{color[1]}           `:+ssssossossss+-`                 {results[0]}
+{color[1]}        .oys///oyhddddhyo///sy+.              {results[1]}
+{color[1]}      /yo:+hNNNNNNNNNNNNNNNNh+:oy/            {results[2]}
+{color[1]}    :h/:yNNNNNNNNNNNNNNNNNNNNNNy-+h:          {results[3]}
+{color[1]}  `ys.yNNNNNNNNNNNNNNNNNNNNNNNNNNy.ys         {results[4]}
+{color[1]} `h+-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-oh        {results[5]}
+{color[1]} h+-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.oy       {results[6]}
+{color[1]}/d`mNNNNNNN/::mNNNd::m+:/dNNNo::dNNNd`m:      {results[7]}
+{color[1]}h//NNNNNNN: . .NNNh  mNo  od. -dNNNNN:+y      {results[8]}
+{color[1]}N.sNNNNNN+ -N/ -NNh  mNNd.   sNNNNNNNo-m      {results[9]}
+{color[1]}N.sNNNNNs  +oo  /Nh  mNNs` ` /mNNNNNNo-m      {results[10]}
+{color[1]}h//NNNNh  ossss` +h  md- .hm/ `sNNNNN:+y      {results[11]}
+{color[1]}:d`mNNN+/yNNNNNd//y//h//oNNNNy//sNNNd`m-      {results[12]}
+{color[1]} yo-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm.ss       {results[13]}
+{color[1]} `h+-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-oy        {results[14]}
+{color[1]}   sy.yNNNNNNNNNNNNNNNNNNNNNNNNNNs.yo         {results[15]}
+{color[1]}    :h+-yNNNNNNNNNNNNNNNNNNNNNNs-oh-          {results[16]} 
+{color[1]}      :ys:/yNNNNNNNNNNNNNNNmy/:sy:            {results[17]}
+{color[1]}        .+ys///osyhhhhys+///sy+.              {results[18]}
+{color[1]}            -/osssossossso/-                  {results[19]}
+{color[1]}                                              {results[20]}
+{color[1]}                                              {results[21]}
+\x1b[0m''',
+'Alpine': '''{color[1]}
+{color[1]}       .hddddddddddddddddddddddh.             {results[1]}
+{color[1]}      :dddddddddddddddddddddddddd:            {results[2]}
+{color[1]}     /dddddddddddddddddddddddddddd/           {results[3]}
+{color[1]}    +dddddddddddddddddddddddddddddd+          {results[4]}
+{color[1]}  `sdddddddddddddddddddddddddddddddds`        {results[5]}
+{color[1]} `ydddddddddddd++hdddddddddddddddddddy`       {results[6]}
+{color[1]}.hddddddddddd+`  `+ddddh:-sdddddddddddh.      {results[7]}
+{color[1]}hdddddddddd+`      `+y:    .sddddddddddh      {results[8]}
+{color[1]}ddddddddh+`   `//`   `.`     -sddddddddd      {results[9]}
+{color[1]}ddddddh+`   `/hddh/`   `:s-    -sddddddd      {results[10]}
+{color[1]}ddddh+`   `/+/dddddh/`   `+s-    -sddddd      {results[11]}
+{color[1]}ddd+`   `/o` :dddddddh/`   `oy-    .yddd      {results[12]}
+{color[1]}hdddyo+ohddyosdddddddddho+oydddy++ohdddh      {results[13]}
+{color[1]}.hddddddddddddddddddddddddddddddddddddh.      {results[14]}
+{color[1]} `yddddddddddddddddddddddddddddddddddy`       {results[15]}
+{color[1]}  `sdddddddddddddddddddddddddddddddds`        {results[16]}
+{color[1]}    +dddddddddddddddddddddddddddddd+          {results[17]}
+{color[1]}     /dddddddddddddddddddddddddddd/           {results[18]}
+{color[1]}      :dddddddddddddddddddddddddd:            {results[19]}
+{color[1]}       .hddddddddddddddddddddddh.             {results[20]}
+{color[1]}                                              {results[21]}
+\x1b[0m''',
 'Arch Linux': '''{color[1]}
 {color[1]}               +                {results[0]}
 {color[1]}               #                {results[1]}
@@ -99,11 +148,10 @@ logosDict = {
 {color[0]}  ;####                 ####;   {results[15]}
 {color[0]}  ##'                     '##   {results[16]} 
 {color[0]} #'                         `#  {results[17]}
-                                {results[18]}
-                                {results[19]}
-                                {results[20]}
-                                {results[21]}
-
+{color[0]}                                {results[18]}
+{color[0]}                                {results[19]}
+{color[0]}                                {results[20]}
+{color[0]}                                {results[21]}
 \x1b[0m''',
 'Manjaro Linux': '''{color[1]}
 {color[1]}  ██████████████████  ████████  {results[0]}
@@ -119,16 +167,15 @@ logosDict = {
 {color[1]}  ████████  {color[0]}████████  {color[1]}████████  {results[10]}
 {color[1]}  ████████  {color[0]}████████  {color[1]}████████  {results[11]}
 {color[1]}  ████████  {color[0]}████████  {color[1]}████████  {results[12]}
-                                {results[13]}
-                                {results[14]}
-                                {results[15]}
-                                {results[16]}
-                                {results[17]}
-                                {results[18]}
-                                {results[19]}
-                                {results[20]}
-                                {results[21]}
-                                
+{color[1]}                                {results[13]}
+{color[1]}                                {results[14]}
+{color[1]}                                {results[15]}
+{color[1]}                                {results[16]}
+{color[1]}                                {results[17]}
+{color[1]}                                {results[18]}
+{color[1]}                                {results[19]}
+{color[1]}                                {results[20]}
+{color[1]}                                {results[21]}                                
 \x1b[0m''', 
 'Birthday': '''{color[1]}
 {color[2]}██{color[3]}╗  {color[2]}██{color[3]}╗ {color[2]}█████{color[3]}╗ {color[2]}██████{color[3]}╗ {color[2]}██████{color[3]}╗ {color[2]}██{color[3]}╗   {color[2]}██{color[3]}╗                                           {results[0]}
@@ -157,8 +204,6 @@ logosDict = {
 }
 
 processes = str(subprocess.check_output(('ps', '-u', getuser(), '-o', 'comm','--no-headers')), encoding='utf8').rstrip('\n').split('\n')
-
-subprocess.check_output(('setterm', '-linewrap', 'off'))
 #--------------Function---------------#
 
 def time_of_Day(Hour, Day, Month):
@@ -216,7 +261,7 @@ class Output:
                         if len(date) == 2:
                             if (Day == int(date[0])) and (Month == int(date[1])):
                                 return 'Birthday'
-                            elif os.path.exists('/etc/pacman.conf'):
+                            elif os.path.exists('/etc/lsb-release'):
                                 distro = subprocess.check_output(['lsb_release', '-d']).decode('utf-8').strip('Description:')[1:-1]
                                 if distro in logosDict:
                                     return distro
@@ -228,7 +273,7 @@ class Output:
                         else:
                             if (Day == 16) and (Month == 6):
                                 return 'Birthday'
-                            elif os.path.exists('/etc/pacman.conf'):
+                            elif os.path.exists('/etc/lsb-release'):
                                 distro = subprocess.check_output(['lsb_release', '-d']).decode('utf-8').strip('Description:')[1:-1]
                                 if distro in logosDict:
                                     return distro
@@ -252,7 +297,7 @@ class Output:
         else:
             if (Day == 16) and (Month == 6):
                 return 'Birthday'
-            elif os.path.exists('/etc/pacman.conf'):
+            elif os.path.exists('/etc/lsb-release'):
                 distro = subprocess.check_output(['lsb_release', '-d']).decode('utf-8').strip('Description:')[1:-1]
                 if distro in logosDict:
                     return distro
@@ -298,7 +343,7 @@ class Hostname:
             
 class Distro:
     def __init__(self):
-        if os.path.exists('/etc/pacman.conf'):
+        if os.path.exists('/etc/lsb-release'):
             distro =  subprocess.check_output(['lsb_release', '-d']).decode('utf-8').strip('Description:')[1:-1]
             arch = platform.machine()
         self.key = 'Distro'
@@ -470,6 +515,7 @@ classes = {
  }
 
 if __name__ == '__main__':
+    subprocess.call(('setterm', '-linewrap', 'off'))
     out = Output()
     for x in output:
         out.append(classes[x]())
