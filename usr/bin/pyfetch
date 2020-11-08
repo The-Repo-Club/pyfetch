@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# pyfetch [version 0.3.0]
+# pyfetch [version 2020.11.8-1]
 #
 # pyfetch is a simple system information tool written in Python.
 #
@@ -203,6 +203,7 @@ logosDict = {
 \x1b[0m''', 
 }
 
+version = '2020.11.08'
 processes = str(subprocess.check_output(('ps', '-u', getuser(), '-o', 'comm','--no-headers')), encoding='utf8').rstrip('\n').split('\n')
 #--------------Function---------------#
 
@@ -247,13 +248,14 @@ class Output:
         Month = self.now.month
         if len(sys.argv[1:]) >= 1:
             try:
-                opts, args = getopt.getopt(sys.argv[1:],"hbd",["help","birthday","distro"])
+                opts, args = getopt.getopt(sys.argv[1:],"hbdv",["help","birthday","distro","version"])
             except getopt.GetoptError:
                 print ('For help try pyfetch -h')
                 sys.exit(2)
             for opt, arg in opts:
                 if opt in ("-h", "--help"):
-                    print ('pyfetch -')
+                    print ('pyfetch -b [day/month]      #Sets the day and month for your birthday.')
+                    print ('pyfetch -d [distro]         #Test the look of a distro of chose.')
                     sys.exit()
                 elif opt in ("-b", "--birthday"):
                     try:
@@ -293,6 +295,9 @@ class Output:
                     else:
                         print (f'Sorry {distro} is not supported')
                         sys.exit(2)
+                elif opt in ("-v", "--version"):
+                    print (f'pyfetch  version {version}')
+                    sys.exit()
 
         else:
             if (Day == 16) and (Month == 6):
