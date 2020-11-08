@@ -1,3 +1,3 @@
-##PyFetch
+## PyFetch
 
 ![Screen](screen.png)
