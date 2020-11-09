@@ -373,6 +373,11 @@ class WindowManager:
             if key in processes:
                 wm = wmDict[key]
                 break
+            if wm == "":
+                for key in deDict.keys():
+                    if key in processes:
+                        wm = deDict[key]
+                        break
                     
         self.key = 'WM'
         self.value = wm
@@ -384,6 +389,11 @@ class DesktopEnvironment:
             if key in processes:
                 de = deDict[key]
                 break
+            if de == "":
+                for key in wmDict.keys():
+                    if key in processes:
+                        de = wmDict[key]
+                        break
                     
         self.key = 'DE'
         self.value = de
