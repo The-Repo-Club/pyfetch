@@ -190,7 +190,7 @@ logosDict = {
                  {color[4]}██████{color[5]}╔╝{color[4]}██{color[5]}║{color[4]}██████{color[5]}╔╝   {color[4]}██{color[5]}║   {color[4]}███████{color[5]}║{color[4]}██{color[5]}║  {color[4]}██{color[5]}║{color[4]}███████{color[5]}║ ╚{color[4]}████{color[5]}╔╝       {results[9]}
                  {color[4]}██{color[5]}╔══{color[4]}██{color[5]}╗{color[4]}██{color[5]}║{color[4]}██{color[5]}╔══{color[4]}██{color[5]}╗   {color[4]}██{color[5]}║   {color[4]}██{color[5]}╔══{color[4]}██{color[5]}║{color[4]}██{color[5]}║  {color[4]}██{color[5]}║{color[4]}██{color[5]}╔══{color[4]}██{color[5]}║  ╚{color[4]}██{color[5]}╔╝        {results[10]}
                  {color[4]}██████{color[5]}╔╝{color[4]}██{color[5]}║{color[4]}██{color[5]}║  {color[4]}██{color[5]}║   {color[4]}██{color[5]}║   {color[4]}██{color[5]}║  {color[4]}██{color[5]}║{color[4]}██████{color[5]}╔╝{color[4]}██{color[5]}║  {color[4]}██{color[5]}║   {color[4]}██{color[5]}║         {results[11]}
-                 ╚═════╝ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝         {results[12]}
+                 {color[5]}╚═════╝ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝         {results[12]}
                                                                                     {results[13]}
                                                                                     {results[14]}
                                                                                     {results[15]}
