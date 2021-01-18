@@ -25,7 +25,7 @@ from gi.repository import Gdk, Gtk, GObject, Gio, GLib
 
 #---------------Output---------------#
 
-output = [ 'Greeting', 'Dashes', 'User', 'Hostname', 'Distro', 'Kernel', 'Uptime', 'Packages', 'Shell', 'Resolution', 'DesktopEnvironment', 'WindowManager', 'Theme', 'Icons', 'Terminal', 'CPU', 'GPU', 'RAM', 'Disk', 'Blank', 'Bar1', 'Bar2' ] 
+output = [ 'Greeting', 'Dashes', 'User', 'Hostname', 'Distro', 'Kernel', 'Uptime', 'Packages', 'Shell', 'Resolution', 'DesktopEnvironment', 'WindowManager', 'Theme', 'Icons', 'Font', 'Terminal', 'CPU', 'GPU', 'RAM', 'Disk', 'Blank', 'Bar1', 'Bar2' ]
  
 #---------------Dictionaries---------------#
 
@@ -397,6 +397,12 @@ class DesktopEnvironment:
                     
         self.key = 'DE'
         self.value = de
+
+class Font:
+    def __init__(self):
+        settings = Gtk.Settings.get_default()
+        self.key = 'Font'
+        self.value = settings.get_property('gtk-font-name')
             
 class Shell:
     def __init__(self):
@@ -519,6 +525,7 @@ classes = {
  'WindowManager': WindowManager,
  'Theme': Theme,
  'Icons': Icons,
+ 'Font': Font,
  'Terminal': Terminal,
  'CPU': CPU,
  'GPU': GPU,
