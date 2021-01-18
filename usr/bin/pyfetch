@@ -25,7 +25,7 @@ from gi.repository import Gdk, Gtk, GObject, Gio, GLib
 
 #---------------Output---------------#
 
-output = [ 'Greeting', 'Dashes', 'User', 'Hostname', 'Distro', 'Kernel', 'Uptime', 'Packages', 'Shell', 'Resolution', 'DesktopEnvironment', 'WindowManager', 'Theme', 'Icons', 'Font', 'Terminal', 'CPU', 'GPU', 'RAM', 'Disk', 'Blank', 'Bar1', 'Bar2' ]
+output = [ 'Greeting', 'Dashes', 'User', 'Hostname', 'Distro', 'Kernel', 'Uptime', 'Packages', 'Shell', 'Resolution', 'DesktopEnvironment', 'WindowManager', 'Theme', 'Icons', 'Font', 'Terminal', 'CPU', 'GPU', 'RAM', 'Disk', 'Blank', 'Bar1', 'Bar2', 'Blank' ]
  
 #---------------Dictionaries---------------#
 
@@ -105,6 +105,8 @@ logosDict = {
 {color[1]}            -/osssossossso/-                  {results[19]}
 {color[1]}                                              {results[20]}
 {color[1]}                                              {results[21]}
+{color[1]}                                              {results[22]}
+{color[1]}                                              {results[23]}
 \x1b[0m''',
 'Alpine': '''{color[1]}
 {color[1]}       .hddddddddddddddddddddddh.             {results[1]}
@@ -128,6 +130,8 @@ logosDict = {
 {color[1]}      :dddddddddddddddddddddddddd:            {results[19]}
 {color[1]}       .hddddddddddddddddddddddh.             {results[20]}
 {color[1]}                                              {results[21]}
+{color[1]}                                              {results[22]}
+{color[1]}                                              {results[23]}
 \x1b[0m''',
 'Arch Linux': '''{color[1]}
 {color[1]}               +                {results[0]}
@@ -152,6 +156,8 @@ logosDict = {
 {color[0]}                                {results[19]}
 {color[0]}                                {results[20]}
 {color[0]}                                {results[21]}
+{color[1]}                                {results[22]}
+{color[1]}                                {results[23]}
 \x1b[0m''',
 'Manjaro Linux': '''{color[1]}
 {color[1]}  ██████████████████  ████████  {results[0]}
@@ -175,8 +181,10 @@ logosDict = {
 {color[1]}                                {results[18]}
 {color[1]}                                {results[19]}
 {color[1]}                                {results[20]}
-{color[1]}                                {results[21]}                                
-\x1b[0m''', 
+{color[1]}                                {results[21]}
+ {color[1]}                               {results[22]}
+{color[1]}                                {results[23]}
+\x1b[0m''',
 'Birthday': '''{color[1]}
 {color[2]}██{color[3]}╗  {color[2]}██{color[3]}╗ {color[2]}█████{color[3]}╗ {color[2]}██████{color[3]}╗ {color[2]}██████{color[3]}╗ {color[2]}██{color[3]}╗   {color[2]}██{color[3]}╗                                           {results[0]}
 {color[2]}██{color[3]}║  {color[2]}██{color[3]}║{color[2]}██{color[3]}╔══{color[2]}██{color[3]}╗{color[2]}██{color[3]}╔══{color[2]}██{color[3]}╗{color[2]}██{color[3]}╔══{color[2]}██{color[3]}╗╚{color[2]}██{color[3]}╗ {color[2]}██{color[3]}╔╝                                           {results[1]}
@@ -199,18 +207,18 @@ logosDict = {
                                                                                     {results[18]}
                                                                                     {results[19]}
                                                                                     {results[20]}
-                                                                                    {results[21]}  
+                                                                                    {results[21]}
+                                                                                    {results[22]}
+                                                                                    {results[23]}
 \x1b[0m''', 
 }
 
-version = '2020.11.08'
+version = '2021.01.18'
 processes = str(subprocess.check_output(('ps', '-u', getuser(), '-o', 'comm','--no-headers')), encoding='utf8').rstrip('\n').split('\n')
 #--------------Function---------------#
 
 def time_of_Day(Hour, Day, Month):
-    if (Day == 16) and (Month == 6):
-        return 'Happy Birthday'
-    elif (Hour > 4) and (Hour <= 8):
+    if (Hour > 4) and (Hour <= 8):
         return 'Good early morning'
     elif (Hour > 8) and (Hour <= 12 ):
         return 'Good morning'
@@ -273,7 +281,7 @@ class Output:
                             else:
                                 sys.exit(1)
                         else:
-                            if (Day == 16) and (Month == 6):
+                            if (Day == 18) and (Month == 1):
                                 return 'Birthday'
                             elif os.path.exists('/etc/lsb-release'):
                                 distro = subprocess.check_output(['lsb_release', '-d']).decode('utf-8').strip('Description:')[1:-1]
@@ -448,6 +456,8 @@ class GPU:
 
         self.key = 'GPU'
         self.value = ', '.join(list_gpus)
+        if not list_gpus:
+            self.value = 'Intergrated Graphics'
 
 class RAM:
     def __init__(self):
